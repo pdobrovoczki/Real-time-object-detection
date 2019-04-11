@@ -1,0 +1,5 @@
+*.avi
+*.jpg
+*.JPG
+yolov3.*
+coco.names

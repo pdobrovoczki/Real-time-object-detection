@@ -1,0 +1,6 @@
+https://github.com/spmallick/learnopencv/tree/master/ObjectDetection-YOLO
+https://www.learnopencv.com/deep-learning-based-object-detection-using-yolov3-with-opencv-python-c
+https://www.learnopencv.com/training-yolov3-deep-learning-based-custom-object-detector/
+https://pjreddie.com/darknet/yolo/#demo
+https://pjreddie.com/darknet/install/#cuda
+https://pjreddie.com/darknet/tiny-darknet/
