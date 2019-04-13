@@ -3,3 +3,4 @@
 *.JPG
 yolov3.*
 coco.names
+darknet
