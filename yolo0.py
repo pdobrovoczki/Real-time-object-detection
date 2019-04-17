@@ -99,7 +99,9 @@ with open(classesFile, 'rt') as f:
     classes = f.read().rstrip('\n').split('\n')
 
 # Give the configuration and weight files for the model and load the network using them.
+# modelConfiguration = "yolov3.cfg";
 modelConfiguration = "yolov3-tiny.cfg";
+# modelWeights = "yolov3.weights";
 modelWeights = "yolov3-tiny.weights";
 
 net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
@@ -131,7 +133,8 @@ if ("image" not in args):
     vid_writer = cv.VideoWriter(outputFile, cv.VideoWriter_fourcc('M','J','P','G'), 30, (round(cap.get(cv.CAP_PROP_FRAME_WIDTH)),round(cap.get(cv.CAP_PROP_FRAME_HEIGHT))))
 
 # while cv.waitKey(1) < 0 & 0xFF != ord('q'):
-while(True) :
+# while(True) :
+while(cap.isOpened()) :
     # get frame from the video
     hasFrame, frame = cap.read()
 
@@ -167,4 +170,9 @@ while(True) :
     else:
         vid_writer.write(frame.astype(np.uint8))
         cv.imshow('frame',frame)
+        if cv.waitKey(1) & 0xFF == ord('q'):
+            break
 
+# When everything done, release the capture
+cap.release()
+cv.destroyAllWindows()
